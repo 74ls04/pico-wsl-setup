@@ -7,12 +7,6 @@
 # Exit immediately if a command exits with a non-zero status.
 set -o errexit
 
-# Ensure script is running as root
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root (use sudo)" 1>&2
-   exit 1
-fi
-
 # Base directory for the SDK
 OUTDIR="$(pwd)/pico"
 
@@ -59,14 +53,10 @@ done
 
 cd $OUTDIR
 
-# Pick up new variables we just defined
+# Pick up the new variables we just defined
 source ~/.bashrc
 
-
-# Install WSL extensions
-echo "Installing WSL extensions"
-code --install-extension marus25.cortex-debug
-code --install-extension ms-vscode.cmake-tools
-code --install-extension ms-vscode.cpptools
-
-
+echo "======= Configuration Complete ========="
+echo "To configure Visual Studio code follow the instructions at"
+echo "https://paulbupejr.com/raspberry-pi-pico-windows-development/"
+exit 1
