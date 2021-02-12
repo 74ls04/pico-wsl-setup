@@ -8,7 +8,7 @@
 set -o errexit
 
 # Base directory for the SDK
-OUTDIR="$(pwd)/pico"
+OUTDIR="$HOME/pico"
 
 # Install dependencies
 SDK_DEPS="git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential"
@@ -56,7 +56,8 @@ cd $OUTDIR
 # Pick up the new variables we just defined
 source ~/.bashrc
 
-echo "======= Configuration Complete ========="
+echo ""
+echo "================= Configuration Complete ================="
 echo "To configure Visual Studio code follow the instructions at"
 echo "https://paulbupejr.com/raspberry-pi-pico-windows-development/"
 exit 1
